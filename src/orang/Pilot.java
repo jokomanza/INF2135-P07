@@ -1,6 +1,6 @@
 package orang;
 
-import java.util.List;
+import util.printer.Information;
 
 public class Pilot extends Orang {
 
@@ -21,10 +21,11 @@ public class Pilot extends Orang {
     }
 
     @Override
-    public List<String> getPrintableInformations() {
-        List<String> existedInformations = super.getPrintableInformations();
-        existedInformations.addFirst("Kode Pilot: " + kodePilot);
+    public Information getPrintableInformation() {
+        Information existedInformation = super.getPrintableInformation();
+        existedInformation.setContent("Pilot");
+        existedInformation.addInformation("Kode Pilot: " + kodePilot);
 
-        return existedInformations;
+        return existedInformation;
     }
 }

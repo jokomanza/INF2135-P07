@@ -1,6 +1,9 @@
 package penerbangan;
 
-public class Pesawat {
+import util.printer.Information;
+import util.printer.Printable;
+
+public class Pesawat implements Printable {
 
     private String kodePesawat;
     private String namaPesawat;
@@ -54,4 +57,14 @@ public class Pesawat {
         System.out.println("Pesawat " + namaPesawat + " dengan kode " + kodePesawat + " sedang landing.");
     }
 
+    @Override
+    public Information getPrintableInformation() {
+        Information information = new Information("Pesawat");
+        information.addInformation("Kode: " + kodePesawat);
+        information.addInformation("Nama: " + namaPesawat);
+        information.addInformation("Jenis: " + jenisPesawat);
+        information.addInformation("Kapasitas penumpang: " + kapasitasPenumpang);
+
+        return information;
+    }
 }

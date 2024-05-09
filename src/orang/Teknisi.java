@@ -1,6 +1,6 @@
 package orang;
 
-import java.util.List;
+import util.printer.Information;
 
 public class Teknisi extends Orang {
 
@@ -21,10 +21,11 @@ public class Teknisi extends Orang {
     }
 
     @Override
-    public List<String> getPrintableInformations() {
-        List<String> existedInformations = super.getPrintableInformations();
-        existedInformations.addFirst("Kode Teknisi: " + kodeTeknisi);
+    public Information getPrintableInformation() {
+        Information existedInformation = super.getPrintableInformation();
+        existedInformation.setContent("Teknisi");
+        existedInformation.addInformation("Kode Teknisi: " + kodeTeknisi);
 
-        return existedInformations;
+        return existedInformation;
     }
 }

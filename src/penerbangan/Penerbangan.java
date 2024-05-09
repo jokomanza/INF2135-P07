@@ -3,15 +3,18 @@ package penerbangan;
 import orang.Pilot;
 import orang.Pramugari;
 import orang.Teknisi;
+import util.printer.Information;
+import util.printer.Printable;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Penerbangan {
+public class Penerbangan implements Printable {
 
+    private final List<Pilot> pilots;
     private String kodePenerbangan;
     private Airline airline;
     private Pesawat pesawat;
-    private List<Pilot> pilots;
     private Pramugari pramugari;
     private Teknisi teknisi;
 
@@ -22,6 +25,7 @@ public class Penerbangan {
 
     public Penerbangan(String kodePenerbangan) {
         this.kodePenerbangan = kodePenerbangan;
+        pilots = new ArrayList<>();
     }
 
     public String getKodePenerbangan() {
@@ -52,8 +56,10 @@ public class Penerbangan {
         return pilots;
     }
 
-    public void setPilots(List<Pilot> pilots) {
-        this.pilots = pilots;
+    public void addPilot(Pilot pilot) {
+        if (pilots.size() < 2) {
+            pilots.add(pilot);
+        }
     }
 
     public Pramugari getPramugari() {
@@ -94,5 +100,39 @@ public class Penerbangan {
 
     public void setJumlahPenumpang(int jumlahPenumpang) {
         this.jumlahPenumpang = jumlahPenumpang;
+    }
+
+    @Override
+    public Information getPrintableInformation() {
+        Information information = new Information("Penerbangan");
+
+        information.addInformation(airline.getPrintableInformation());
+        information.addInformation(pesawat.getPrintableInformation());
+
+
+        Information pilot1Information = pilots.getFirst().getPrintableInformation();
+        pilot1Information.setContent("Pilot 1");
+        information.addInformation(pilot1Information);
+
+        Information pilot2Information = pilots.getLast().getPrintableInformation();
+        pilot2Information.setContent("Pilot 2");
+        information.addInformation(pilot2Information);
+
+
+        information.addInformation(pramugari.getPrintableInformation());
+        information.addInformation(teknisi.getPrintableInformation());
+
+        Information airportAsalInformation = airportAsal.getPrintableInformation();
+        airportAsalInformation.setContent("Airport Asal");
+        information.addInformation(airportAsalInformation);
+
+        Information airportTujuanInformation = airportTujuan.getPrintableInformation();
+        airportTujuanInformation.setContent("Airport Tujuan");
+        information.addInformation(airportTujuanInformation);
+
+
+        information.addInformation("Jumlah Penumpang: " + jumlahPenumpang);
+
+        return information;
     }
 }

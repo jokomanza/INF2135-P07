@@ -5,8 +5,7 @@ import penerbangan.Airline;
 import penerbangan.Airport;
 import penerbangan.Penerbangan;
 import penerbangan.Pesawat;
-
-import java.util.List;
+import util.printer.Printer;
 
 public class Main {
 
@@ -61,7 +60,8 @@ public class Main {
         Penerbangan penerbangan1 = new Penerbangan("GA123");
         penerbangan1.setAirline(garudaIndonesia);
         penerbangan1.setPesawat(boeing737);
-        penerbangan1.setPilots(List.of(pilot1, pilot2));
+        penerbangan1.addPilot(pilot1);
+        penerbangan1.addPilot(pilot2);
         penerbangan1.setPramugari(pramugari1);
         penerbangan1.setTeknisi(teknisi1);
         penerbangan1.setAirportAsal(soekarnoHatta);
@@ -72,7 +72,8 @@ public class Main {
         Penerbangan penerbangan2 = new Penerbangan("SQ456");
         penerbangan2.setAirline(singaporeAirlines);
         penerbangan2.setPesawat(airbusA350);
-        penerbangan2.setPilots(List.of(pilot3, pilot4));
+        penerbangan2.addPilot(pilot3);
+        penerbangan2.addPilot(pilot4);
         penerbangan2.setPramugari(pramugari2);
         penerbangan2.setTeknisi(teknisi2);
         penerbangan2.setAirportAsal(changiAirport);
@@ -82,7 +83,8 @@ public class Main {
         Penerbangan penerbangan3 = new Penerbangan("CX789");
         penerbangan3.setAirline(cathayPacific);
         penerbangan3.setPesawat(boeing777);
-        penerbangan3.setPilots(List.of(pilot1, pilot3));
+        penerbangan3.addPilot(pilot1);
+        penerbangan3.addPilot(pilot3);
         penerbangan3.setPramugari(pramugari3);
         penerbangan3.setTeknisi(teknisi3);
         penerbangan3.setAirportAsal(hongKongInternational);
@@ -92,36 +94,24 @@ public class Main {
         Penerbangan penerbangan4 = new Penerbangan("QR012");
         penerbangan4.setAirline(qatarAirways);
         penerbangan4.setPesawat(airbusA380);
-        penerbangan4.setPilots(List.of(pilot2, pilot4));
+        penerbangan4.addPilot(pilot2);
+        penerbangan4.addPilot(pilot4);
         penerbangan4.setPramugari(pramugari4);
         penerbangan4.setTeknisi(teknisi4);
         penerbangan4.setAirportAsal(hamadInternational);
         penerbangan4.setAirportTujuan(soekarnoHatta);
         penerbangan4.setJumlahPenumpang(517);
 
-        printPenerbangan(penerbangan1);
+        Printer.print(penerbangan1);
         System.out.println();
 
-        printPenerbangan(penerbangan2);
+        Printer.print(penerbangan2);
         System.out.println();
 
-        printPenerbangan(penerbangan3);
+        Printer.print(penerbangan3);
         System.out.println();
 
-        printPenerbangan(penerbangan4);
+        Printer.print(penerbangan4);
         System.out.println();
-    }
-
-    private static void printPenerbangan(Penerbangan penerbangan) {
-        System.out.println("Penerbangan " + penerbangan.getKodePenerbangan());
-        System.out.println("Airline: " + penerbangan.getAirline().getNama());
-        System.out.println("Pesawat: " + penerbangan.getPesawat().getNamaPesawat());
-        System.out.println("Pilot 1: " + penerbangan.getPilots().get(0).getNama());
-        System.out.println("Pilot 2: " + penerbangan.getPilots().get(1).getNama());
-        System.out.println("Pramugari: " + penerbangan.getPramugari().getNama());
-        System.out.println("Teknisi: " + penerbangan.getTeknisi().getNama());
-        System.out.println("Airport Asal: " + penerbangan.getAirportAsal().getNama());
-        System.out.println("Airport Tujuan: " + penerbangan.getAirportTujuan().getNama());
-        System.out.println("Jumlah Penumpang: " + penerbangan.getJumlahPenumpang());
     }
 }

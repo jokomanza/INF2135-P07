@@ -1,9 +1,7 @@
 package orang;
 
+import util.printer.Information;
 import util.printer.Printable;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class Orang implements Printable {
 
@@ -22,10 +20,10 @@ public abstract class Orang implements Printable {
     }
 
     @Override
-    public List<String> getPrintableInformations() {
-        List<String> info = new ArrayList<>();
-        info.add("Nama: " + nama);
+    public Information getPrintableInformation() {
+        Information information = new Information("Orang");
+        information.addInformation("Nama: " + nama);
 
-        return info;
+        return information;
     }
 }

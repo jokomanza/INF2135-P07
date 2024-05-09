@@ -1,6 +1,9 @@
 package penerbangan;
 
-public class Airline {
+import util.printer.Information;
+import util.printer.Printable;
+
+public class Airline implements Printable {
 
     private String nama;
     private String kodeIATA;
@@ -44,10 +47,13 @@ public class Airline {
     }
 
     @Override
-    public String toString() {
-        return "Nama: " + nama + "\n" +
-                "Kode IATA: " + kodeIATA + "\n" +
-                "Kode ICAO: " + kodeICAO + "\n" +
-                "Negara: " + negara + "\n";
+    public Information getPrintableInformation() {
+        Information information = new Information("Airline");
+        information.addInformation("Nama: " + nama);
+        information.addInformation("Kode IATA: " + kodeIATA);
+        information.addInformation("Kode ICAO: " + kodeICAO);
+        information.addInformation("Negara: " + negara);
+
+        return information;
     }
 }
