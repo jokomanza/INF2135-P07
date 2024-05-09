@@ -49,14 +49,6 @@ public class Pesawat implements Printable {
         this.kapasitasPenumpang = kapasitasPenumpang;
     }
 
-    public void takeOff() {
-        System.out.println("Pesawat " + namaPesawat + " dengan kode " + kodePesawat + " sedang take off.");
-    }
-
-    public void landing() {
-        System.out.println("Pesawat " + namaPesawat + " dengan kode " + kodePesawat + " sedang landing.");
-    }
-
     @Override
     public Information getPrintableInformation() {
         Information information = new Information("Pesawat");
