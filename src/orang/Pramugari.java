@@ -1,3 +1,4 @@
+// File: Pramugari.java
 package orang;
 
 import util.printer.Information;
@@ -24,7 +25,7 @@ public class Pramugari extends Orang {
     public Information getPrintableInformation() {
         Information existedInformation = super.getPrintableInformation();
         existedInformation.setContent("Pramugari");
-        existedInformation.addInformation("Kode Pramugari: " + kodePramugari);
+        existedInformation.addSubInformation("Kode Pramugari: " + kodePramugari);
 
         return existedInformation;
     }

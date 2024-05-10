@@ -1,3 +1,4 @@
+// File: Pesawat.java
 package penerbangan;
 
 import util.printer.Information;
@@ -52,10 +53,10 @@ public class Pesawat implements Printable {
     @Override
     public Information getPrintableInformation() {
         Information information = new Information("Pesawat");
-        information.addInformation("Kode: " + kodePesawat);
-        information.addInformation("Nama: " + namaPesawat);
-        information.addInformation("Jenis: " + jenisPesawat);
-        information.addInformation("Kapasitas penumpang: " + kapasitasPenumpang);
+        information.addSubInformation("Kode: " + kodePesawat);
+        information.addSubInformation("Nama: " + namaPesawat);
+        information.addSubInformation("Jenis: " + jenisPesawat);
+        information.addSubInformation("Kapasitas penumpang: " + kapasitasPenumpang);
 
         return information;
     }

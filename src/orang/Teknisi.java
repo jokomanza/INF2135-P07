@@ -1,3 +1,4 @@
+// File: Teknisi.java
 package orang;
 
 import util.printer.Information;
@@ -24,7 +25,7 @@ public class Teknisi extends Orang {
     public Information getPrintableInformation() {
         Information existedInformation = super.getPrintableInformation();
         existedInformation.setContent("Teknisi");
-        existedInformation.addInformation("Kode Teknisi: " + kodeTeknisi);
+        existedInformation.addSubInformation("Kode Teknisi: " + kodeTeknisi);
 
         return existedInformation;
     }

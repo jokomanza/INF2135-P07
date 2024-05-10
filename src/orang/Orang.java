@@ -1,3 +1,4 @@
+// File: Orang.java
 package orang;
 
 import util.printer.Information;
@@ -22,7 +23,7 @@ public abstract class Orang implements Printable {
     @Override
     public Information getPrintableInformation() {
         Information information = new Information("Orang");
-        information.addInformation("Nama: " + nama);
+        information.addSubInformation("Nama: " + nama);
 
         return information;
     }

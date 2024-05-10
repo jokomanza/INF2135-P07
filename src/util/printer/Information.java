@@ -1,11 +1,12 @@
+// File: Information.java
 package util.printer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Information {
-    private final List<Information> subInformations;
     private String content;
+    private final List<Information> subInformations;
 
     public Information(String content) {
         this.content = content;
@@ -24,11 +25,11 @@ public class Information {
         return subInformations;
     }
 
-    public void addInformation(Information information) {
+    public void addSubInformation(Information information) {
         subInformations.add(information);
     }
 
-    public void addInformation(String content) {
+    public void addSubInformation(String content) {
         subInformations.add(new Information((content)));
     }
 }

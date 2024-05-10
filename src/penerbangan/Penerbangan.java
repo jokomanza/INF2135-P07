@@ -1,3 +1,4 @@
+// File: Penerbangan.java
 package penerbangan;
 
 import orang.Pilot;
@@ -106,32 +107,32 @@ public class Penerbangan implements Printable {
     public Information getPrintableInformation() {
         Information information = new Information("Penerbangan");
 
-        information.addInformation(airline.getPrintableInformation());
-        information.addInformation(pesawat.getPrintableInformation());
+        information.addSubInformation(airline.getPrintableInformation());
+        information.addSubInformation(pesawat.getPrintableInformation());
 
 
         Information pilot1Information = pilots.getFirst().getPrintableInformation();
         pilot1Information.setContent("Pilot 1");
-        information.addInformation(pilot1Information);
+        information.addSubInformation(pilot1Information);
 
         Information pilot2Information = pilots.getLast().getPrintableInformation();
         pilot2Information.setContent("Pilot 2");
-        information.addInformation(pilot2Information);
+        information.addSubInformation(pilot2Information);
 
 
-        information.addInformation(pramugari.getPrintableInformation());
-        information.addInformation(teknisi.getPrintableInformation());
+        information.addSubInformation(pramugari.getPrintableInformation());
+        information.addSubInformation(teknisi.getPrintableInformation());
 
         Information airportAsalInformation = airportAsal.getPrintableInformation();
         airportAsalInformation.setContent("Airport Asal");
-        information.addInformation(airportAsalInformation);
+        information.addSubInformation(airportAsalInformation);
 
         Information airportTujuanInformation = airportTujuan.getPrintableInformation();
         airportTujuanInformation.setContent("Airport Tujuan");
-        information.addInformation(airportTujuanInformation);
+        information.addSubInformation(airportTujuanInformation);
 
 
-        information.addInformation("Jumlah Penumpang: " + jumlahPenumpang);
+        information.addSubInformation("Jumlah Penumpang: " + jumlahPenumpang);
 
         return information;
     }
